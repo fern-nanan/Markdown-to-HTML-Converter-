@@ -162,6 +162,41 @@
         overflow-y: auto;
       }
 
+      /* Pink Custom Scrollbar Styles */
+      #markdown-input::-webkit-scrollbar,
+      #html-output::-webkit-scrollbar,
+      #preview::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      #markdown-input::-webkit-scrollbar-track,
+      #html-output::-webkit-scrollbar-track,
+      #preview::-webkit-scrollbar-track {
+        background: var(--pink-accent-bg);
+        border-radius: 10px;
+      }
+
+      #markdown-input::-webkit-scrollbar-thumb,
+      #html-output::-webkit-scrollbar-thumb,
+      #preview::-webkit-scrollbar-thumb {
+        background: var(--vibrant-hot-pink);
+        border-radius: 10px;
+      }
+
+      #markdown-input::-webkit-scrollbar-thumb:hover,
+      #html-output::-webkit-scrollbar-thumb:hover,
+      #preview::-webkit-scrollbar-thumb:hover {
+        background: var(--primary-pink);
+      }
+
+      /* Firefox standard scrollbar support */
+      #markdown-input,
+      #html-output,
+      #preview {
+        scrollbar-width: thin;
+        scrollbar-color: var(--vibrant-hot-pink) var(--pink-accent-bg);
+      }
+
       #markdown-input {
         font-family: "Consolas", "Courier New", monospace;
         resize: vertical;
@@ -234,33 +269,40 @@
   </head>
 
   <body>
-    <h1>Pink Markdown Converter</h1>
+    <h1>Fernanan's Markdown to HTML Converter!</h1>
     <p class="subtitle">
-      Transform markdown into styled HTML with real-time previewing
+      Transform m(mid)arkdown code into (W) styled HTML with real time preview!
     </p>
 
     <div id="container">
       <div class="container">
         <div class="card-header-wrapper">
-          <h2><span>📄</span> Markdown Input</h2>
-          <span class="badge">473 chars</span>
+          <h2><span>#</span> Markdown Input</h2>
+          <span class="badge">###</span>
         </div>
         <textarea
           id="markdown-input"
-          placeholder="Enter your markdown here..."
+          placeholder="# Heading 1 (Document Title)
+
+## Heading 2 (Main Sections)
+
+### Heading 3 (Sub-sections)"
         ></textarea>
       </div>
       <div class="container">
         <div class="card-header-wrapper">
           <h2><span>&lt;/&gt;</span> Raw HTML Output</h2>
-          <span class="badge">Generated</span>
+          <span class="badge">Generated html</span>
         </div>
-        <div id="html-output"></div>
+        <textarea
+          id="html-output"
+          placeholder="<h1>Heading 1 (Document Title)</h1><h2>Heading 2 (Main Section)</h2><h3>Heading 3 (Sub-section)</h3>"
+        ></textarea>
       </div>
       <div class="container">
         <div class="card-header-wrapper">
           <h2><span></span> LIVE Preview!</h2>
-          <span class="badge">Real-Time</span>
+          <span class="badge">Real Time (wow) </span>
         </div>
         <div id="preview"></div>
       </div>
